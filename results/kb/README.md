@@ -7,7 +7,7 @@ This is a self-run submission scored with the official `rag_bench.evaluator.eval
 ## Setup
 
 - Dataset: `ai-forever/hist-rag-bench-*`, revision `1.15.0`, 542 texts, 600 questions (150 per type).
-- Chat / graph extraction: `qwen3.8:latest` (27B, Q4_K_M) served by Ollama, thinking disabled.
+- Chat / graph extraction: `qwen3.8` (architecture qwen35, 27.3B, Q4_K_M) served by Ollama, thinking disabled. The index was rebuilt from scratch with this model.
 - Embeddings: `qwen3-embedding:0.6b`.
 - Index: all 542 texts indexed with entity/relation extraction and community summaries.
 - Answering: retrieval and Graph-of-Thoughts synthesis, followed by one extra chat call that reduces the answer to its bare value (name, number, date or short list), so that Exact Match, Substring Match and ROUGE are meaningful. `found_ids` are the retrieved public text ids in ranked order.
@@ -17,13 +17,13 @@ This is a self-run submission scored with the official `rag_bench.evaluator.eval
 
 | Metric | Overall | cond | mh | set | simple |
 |---|---|---|---|---|---|
-| Hit Rate | 0.8975 | 0.9167 | 0.8878 | 0.9056 | 0.8800 |
-| MRR | 0.6035 | 0.6122 | 0.6031 | 0.6037 | 0.5950 |
-| ROUGE-1 | 0.6441 | 0.7630 | 0.6391 | 0.5605 | 0.6137 |
-| ROUGE-2 | 0.4319 | 0.5598 | 0.3838 | 0.3259 | 0.4583 |
-| ROUGE-L | 0.6048 | 0.7597 | 0.6357 | 0.4131 | 0.6107 |
-| Exact Match | 0.3017 | 0.5667 | 0.4067 | 0.0000 | 0.2333 |
-| Substring Match | 0.3500 | 0.5933 | 0.4333 | 0.0067 | 0.3667 |
+| Hit Rate | 0.9153 | 0.9167 | 0.8911 | 0.9333 | 0.9200 |
+| MRR | 0.6279 | 0.5849 | 0.6147 | 0.6944 | 0.6175 |
+| ROUGE-1 | 0.6660 | 0.8315 | 0.6305 | 0.5754 | 0.6265 |
+| ROUGE-2 | 0.4496 | 0.6117 | 0.3559 | 0.3547 | 0.4761 |
+| ROUGE-L | 0.6289 | 0.8255 | 0.6296 | 0.4338 | 0.6265 |
+| Exact Match | 0.3550 | 0.7067 | 0.3667 | 0.0000 | 0.3467 |
+| Substring Match | 0.4300 | 0.7400 | 0.4600 | 0.0467 | 0.4733 |
 
 ## Files
 
