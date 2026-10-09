@@ -20,6 +20,15 @@ The first version of this PR was labelled `qwen3.8`, but the `qwen3.8:latest` ta
 
 ## Results
 
+### Leaderboard view
+
+Same columns and averaging as the leaderboard app (per-category mean of `simple/set/mh/cond`, `Total Score` = mean of Retrieval and Generation). These entries have no `precision` (the official evaluator does not compute it), so Retrieval (avg) is the mean of hit rate and MRR only and is not directly comparable with entries that include precision. The other leaderboard entries are on version 1.11.0.
+
+| Model | Embeddings | Top k | Retrieval (avg) | Generation (avg) | Total Score | Version | Last Updated |
+|---|---|---|---|---|---|---|---|
+| Qwen3.8-27B (kb graphRAG) (aa045f) | qwen3-embedding:0.6b | 10 | 0.7716 | 0.6474 | 0.7095 | 1.15.0 | 2026-10-09 |
+| gemma4-25B (kb graphRAG) (fe39ea) | qwen3-embedding:0.6b | 10 | 0.7505 | 0.6244 | 0.6874 | 1.15.0 | 2026-10-04 |
+
 ### qwen3.8 (`qwen3.8/`)
 
 | Metric | Overall | cond | mh | set | simple |
